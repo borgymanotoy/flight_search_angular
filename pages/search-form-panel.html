@@ -1,0 +1,34 @@
+                        <form name="searchForm" ng-submit="searchForm.$valid && form.searchFlights()" novalidate>
+                            <div id="dvSearchInfo" class="alert alert-info" ng-show="searchForm.$invalid">
+                                <strong>Required Fields:</strong>&nbsp;
+                                <span id="spnSearchInfo">Origin, Destination, Departure Date</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtOrigin">Origin:</label>
+                                <input type="text" name="origin" id="txtOrigin" placeholder="DVO" title="Origin (3 Letters Code)" class="form-control" ng-model="form.searchValues.origin" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtDestination">Destination:</label>
+                                <input type="text" name="destination" id="txtDestination" placeholder="MNL" title="Destination (3 Letters Code)" class="form-control" ng-model="form.searchValues.destination" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtDepartureDate">Departure Date:</label>
+                                <input type="text" name="departureDate" id="txtDepartureDate" placeholder="MM-DD-YYYY" title="Flight Date (Format: MM-DD-YYYY)" class="form-control" ng-model="form.searchValues.departureDate" required>
+                            </div>
+                            <div class="airlines">
+                                <div class="checkbox">
+                                    <label for="chkPR"><input type="checkbox" name="airlines" id="chkPR" value="PR" ng-model="form.searchValues.hasPR" />Philippine Airlines</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label for="chkPQ"><input type="checkbox" name="airlines" id="chkPQ" value="PQ" ng-model="form.searchValues.hasPQ" />Air Asia</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label for="chk5J"><input type="checkbox" name="airlines" id="chk5J" value="5J" ng-model="form.searchValues.has5J" />Cebu Pacific</label>
+                                </div>
+                            </div>
+
+                            <div align="right">
+                                <button id="btnSearch" class="btn btn-primary">Search Flights</button>
+                                <button id="btnClear" type="button" clear-fields class="btn btn-primary">Clear</button>
+                            </div>
+                        </form>

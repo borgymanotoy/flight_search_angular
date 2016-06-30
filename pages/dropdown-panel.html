@@ -1,0 +1,9 @@
+                        <div class="form-group">
+                            <label for="selFlights">Flights:</label>
+                            <select name="flight" id="selFlights" class="form-control">
+                                <option value="-1">Select Flight</option>
+                                <option ng-repeat="fl in dropdown.flights | orderBy:'segmentsCount'" value="{{$index}}">
+                                    {{ dropdown.displayFlightSegments(fl) }}
+                                </option>
+                            </select>
+                        </div>
